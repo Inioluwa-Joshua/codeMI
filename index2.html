@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Cover Template · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+
+    
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+body{
+    height: 500px;
+    /* clip-path: polygon(0 86%, 100% 61%, 100% 100%, 0% 100%); */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23abd5, #23da);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }50%{
+        background-position: 100% 50%;
+    }100%{
+        background-position: 0% 50%;
+    }
+}
+      .btn{
+        --bs-btn-focus-box-shadow:none;
+      }
+      .btn:focus{
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+        /* box-shadow: none; */
+        /* --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5); */
+      }
+      .customBtn{
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+      }
+      .customBtn:active{
+        box-shadow: none;
+      }
+    h1{
+        display: flex;
+        justify-content: center;
+    }
+    .nav-link{
+        color: white;
+        font-weight: 500;
+      }
+      .nav-link:hover{
+        color: crimson;
+      }
+      .nav-link:active{
+        color: crimson;
+        opacity: 0.7;
+      }
+      .nav-link:focus{
+        color: rgb(145, 145, 145);
+        opacity: 0.9;
+      }
+      .active{
+        border-bottom: 1px solid white;
+      }   
+      .brandNameMI{
+        color: crimson;
+      }
+        .navBtn{
+        background-color:crimson;
+        color: white;
+        border: none;
+      }
+      .navBtn:hover{
+        background-color: rgb(240, 25, 68);
+      }
+      .navBtn:active{
+        background-color: crimson;
+        opacity: 0.7;
+        border: none;
+      }
+      .navBtn:focus{
+        background-color: crimson;
+        opacity: 0.7;
+        border: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      .animated {
+        animation: up-down 2s ease-in-out infinite alternate-reverse both;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      @keyframes up-down {
+      0% {
+        transform: translateY(5px);
+      }
+      100% {
+        transform: translateY(-5px);
+      }
+    }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+        <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+            <h3 
+                class="animated 
+                float-md-start mb-0"
+            >
+                Code<span class="brandNameMI">MI</span>
+            </h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end mx-5">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Contact</a>
+            </nav>
+            <button class=" float-md-end navBtn btn">Join Our Community</button>
+            </div>
+        </header>
+
+            <main class="px-3">
+                <h1 
+                data-aos="zoom-out" 
+                data-aos-delay="100" 
+                data-aos-duration="1000"
+                >
+                Code<span class="brandNameMI">MI</span>
+                </h1>
+                <p class="lead">CodeMI the home of coders and developers</p>
+                <p class="lead">
+                <a href="#" class="btn customBtn btn-lg btn-secondary fw-bold border-white bg-dark">Learn more</a>
+                </p>
+            </main>
+            
+        <footer class="mt-auto text-white-50">
+            <p>&copy Copyright 2022 CodeMI <span style="font-size:20px; color:rgb(99, 187, 247);">.</span> "Designed by" <a href="https://getbootstrap.com/" class="text-white">Joshua(J-Techs)</a></p>
+        </footer>
+        </div>
+
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script>
+            AOS.init({
+                once:true
+            });
+            
+        </script>
+    
+    </body>
+</html>
