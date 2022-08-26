@@ -13,10 +13,80 @@
 
     
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
     <!-- Bootstrap core CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
     <style>
+label {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  padding: 5px 12px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  border-radius: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+label::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 80%;
+  background-color: #F0AD4E;
+  -webkit-transition: all 1s ease 0.5s;
+  transition: all 1s ease 0.5s;
+}
+label input {
+  -webkit-transition: width 1s ease, opacity 0.5s ease 0.5s;
+  transition: width 1s ease, opacity 0.5s ease 0.5s;
+  opacity: 1;
+  width: 180px;
+  height: 25px;
+  border: 0;
+  outline: none;
+  color: #b06d0f;
+}
+label i {
+  position: absolute;
+  top: 8px;
+  right: 11px;
+  color: #333;
+  cursor: pointer;
+}
+label[data-state="close"] {
+  border-radius: 30px;
+  padding: 5px 5px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+label[data-state="close"]::after {
+  width: 0%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+label[data-state="close"] i {
+  pointer-events: none;
+}
+label[data-state="close"] input {
+  width: 28px;
+  height: 25px;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: opacity 0.5s ease, width 1s ease;
+  transition: opacity 0.5s ease, width 1s ease;
+  -webkit-appearance: none;
+}
+
+
+
+      .navbar{
+        height: 80px;
+      }
+      .brandNameMI{
+        color: crimson;
+      }
         .modal-ul{
             display: flex;
             justify-content: center;
@@ -55,27 +125,45 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Carousel</a>
+      <h3 
+                class="animated 
+                float-md-start mb-0"
+            >
+               <a href="" class="nav-link text-light">Code<span class="brandNameMI">MI</span></a> 
+      </h3>
+      <form id="app" action="#" class="order-md-1">
+        <label :data-state="state" for="search">
+          <input type="text" placeholder="Search" @click="state = 'opan'" @blur="state='close'"/>
+          <i class="bi bi-search" @click="" aria-hidden="true"></i>
+        </label>
+      </form>
       <button type="button" class="navbar-toggler " data-bs-toggle="modal" data-bs-target="#exampleModal4">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0 mx-5">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Disabled</a>
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <!-- This script got from frontendfreecode.com -->
+        
+                                                                              
       </div>
+      
     </div>
   </nav>
 </header>
@@ -127,7 +215,7 @@
       </div>
       <div class="carousel-item">
         <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
-        <img src="assets/img/bg6.jpg" alt="">
+        <img src="assets/img/bg10.jpg" alt="">
         <div class="container">
           <div class="carousel-caption">
             <h1>Another example headline.</h1>
@@ -138,7 +226,7 @@
       </div>
       <div class="carousel-item">
         <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg> -->
-        <img src="assets/img/bg13.jpg" alt="">
+        <img src="assets/img/bg8.jpg" alt="">
         <div class="container">
           <div class="carousel-caption text-end">
             <h1>One more for good measure.</h1>
@@ -170,23 +258,23 @@
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-        <h2>Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <h2>Portfolio Website Templates</h2>
+        <p>Get your respnsive portfolio website template</p>
+        <p><a class="btn btn-secondary" href="#">Check out &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-        <h2>Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <h2>Business Website Templates</h2>
+        <p>Grab a website template for your business website!!! <br>(Fully Responsive)</p>
+        <p><a class="btn btn-secondary" href="#">Check out &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
-        <h2>Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+        <h2>Landing Page Templates</h2>
+        <p>Get your profesional landing page. (Responsive)</p>
+        <p><a class="btn btn-secondary" href="#">Check out &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -197,12 +285,12 @@
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <h2 class="featurette-heading">Become a Web Designer Today</h2><span class="text-muted"></span></h2>
+        <p class="lead">Enroll now>></p>
       </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+      <div class="col-md-5 bg-dark" width="370" height="450">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+      <img src="assets/img/bg13.jpg" alt="" style="background-size: cover; width:inherit;">
       </div>
     </div>
 
@@ -248,6 +336,12 @@
 
 
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: { state: "close" } 
+      });
+      </script>
     <script>
         var exampleModal = document.getElementById('exampleModal')
 exampleModal.addEventListener('show.bs.modal', function (event) {
